@@ -1,72 +1,75 @@
 # Load-Flow-Study
 
 Welcome to **Load-Flow-Study**!  
-This repository provides tools and scripts for performing load flow studies in electrical power systems. Load flow analysis is a key component in the planning and operation of power grid networks, enabling engineers to determine voltage levels, power flows, and losses throughout the system.
+This repository contains MATLAB scripts for performing load flow studies on power system networks using classical algorithms like Gauss-Seidel and Newton-Raphson. Load flow (or power flow) analysis is essential for planning, operating, and analyzing electrical power systems.
 
 ## Features
 
-- Implementation of load flow algorithms (such as Newton-Raphson, Gauss-Seidel, etc.)
-- Support for modeling buses, generators, loads, and transmission lines
-- Data input and result visualization
-- Modular design for easy extension and adaptation
-- Example cases and test scenarios
+- Implementation of two main load flow algorithms:
+  - Gauss-Seidel
+  - Newton-Raphson
+- Includes sample data for IEEE 14-bus and IEEE 30-bus test systems
+- Calculation and visualization of bus voltages, angles, line flows, and losses
+- Modular MATLAB code for easy adaptation and extension
+
+## File Structure
+
+```
+Load-Flow-Study/
+├── 14IEEE.m         # Data for IEEE 14-bus test system
+├── 30IEEE.m         # Data for IEEE 30-bus test system
+├── Output_Data.m    # Script to display output results
+├── README.md        # Project overview and instructions
+├── busadmittance.m  # Bus admittance matrix calculation
+├── lfgauss.m        # Gauss-Seidel load flow algorithm
+├── lfnewton.m       # Newton-Raphson load flow algorithm
+├── lineflow.m       # Line flow and loss calculations
+├── main.m           # Main menu/driver script
+├── maingauss.m      # Gauss-Seidel workflow script
+├── mainnewton.m     # Newton-Raphson workflow script
+```
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.x (recommended)
-- Required Python packages (see [`requirements.txt`](requirements.txt) if available)
+- MATLAB (recommended version: R2016a or newer)
 
-### Installation
+### How to Run
 
-Clone this repository:
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/ragnaar07/Load-Flow-Study.git
+    cd Load-Flow-Study
+    ```
+2. Open MATLAB and set the project folder as your working directory.
+3. Run the main script:
+    ```matlab
+    main
+    ```
+4. Follow the prompts to select the test system (14-bus or 30-bus) and choose the load flow method (Gauss-Seidel or Newton-Raphson).
 
-```bash
-git clone https://github.com/ragnaar07/Load-Flow-Study.git
-cd Load-Flow-Study
-```
+## Example Usage
 
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-### Usage
-
-Run the main script to perform a load flow study:
-
-```bash
-python main.py
-```
-
-You may need to configure the input data files (such as bus, line, and generator information) according to your network.
-
-## Example
-
-Example configuration files and sample results can be found in the `examples/` directory.
-
-## Repository Structure
-
-```
-Load-Flow-Study/
-├── examples/         # Example cases and data files
-├── src/              # Source code for algorithms and models
-├── main.py           # Entry point for running studies
-├── requirements.txt  # Python dependencies
-└── README.md         # Project overview
-```
+- Select `14` or `30` for the test system when prompted.
+- Select `1` for Gauss-Seidel or `2` for Newton-Raphson method.
+- The results will display bus voltages, angles, generator outputs, and line flows.
 
 ## Contributing
 
-Contributions are welcome!  
-If you find a bug or have suggestions for improvements, please open an issue or submit a pull request.
+Contributions, bug reports, and suggestions are welcome!  
+Feel free to open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
 
 ## Contact
 
 For questions or feedback, please contact [ragnaar07](https://github.com/ragnaar07).
+
+---
+
+**Language Breakdown:**  
+- MATLAB: 97.2%  
+- M: 2.8%
